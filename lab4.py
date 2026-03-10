@@ -2,29 +2,37 @@
 #Задание.1
 password1 = input("Введите пароль: ")
 password2 = input("Повторите пароль: ")
-if password1 == password2:
+if password1 == "" or password2 == "":
+    print("Ошибка: пароль не может быть пустым")
+elif password1 == password2:
     print("Пароль принят")
 else:
     print("Пароль не принят")
 
 #Задание.2
 place = int(input("Введите номер места (1-54): "))
-if place >= 37:
-    place_type = "боковое"
+if place < 1 or place > 54:
+        print("Ошибка: такого места в вагоне нет")
 else:
-    place_type = "купейное"
-if place % 2 == 0:
-    level = "верхнее"
-else:
-    level = "нижнее"
-print("Место", place,":", level,",", place_type)
+    if place >= 37:
+        place_type = "боковое"
+    else:
+        place_type = "купейное"
+    if place % 2 == 0:
+        level = "верхнее"
+    else:
+        level = "нижнее"
+    print("Место", place,":", level,",", place_type)
 
 #Задание.3
 year = int(input("Введите год: "))
-if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
-    print("Год", year, "- високосный")
+if year <= 0:
+    print("Ошибка: год должен быть положительным числом!")
 else:
-    print("Год", year, "- не високосный")
+    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+        print("Год", year, "- високосный")
+    else:
+        print("Год", year, "- не високосный")
 
 #Задание.4
 color1 = input("Введите первый цвет: ")

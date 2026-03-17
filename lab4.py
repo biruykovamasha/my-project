@@ -45,7 +45,13 @@ else:
         print("Результат:", color1)
     elif(color1 == "красный" or color1 == "Красный") and (color2 == "синий" or color2 == "Синий"):
         print("Результат: фиолетовый")
+    elif (color1 == "синий" or color2 == "Синий") and (color2 == "красный" or color1 == "Красный"):
+        print("Результат: фиолетовый")
     elif (color1 == "красный" or color1 == "Красный") and (color2 == "желтый" or color2 == "Желтый"):
         print("Результат: оранжевый")
+    elif (color1 == "желтый" or color1 == "Желтый") and (color2 == "красный" or color2 == "Красный"):
+        print("Результат: оранжевый")
     elif (color1 == "синий" or color1 == "Синий") and (color2 == "желтый" or color2 == "Желтый"):
+        print("Результат: зелёный")
+    elif (color1 == "желтый" or color2 == "Желтый") and (color2 == "синий" or color1 == "Синий"):
         print("Результат: зелёный")

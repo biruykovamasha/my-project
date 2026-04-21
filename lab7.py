@@ -65,7 +65,7 @@ print("Длина кортежа (количество человек в ком�
 team_sorted = tuple(sorted(team))
 print("Отсортированный кортеж по алфавиту:", team_sorted)
 
-surname = "Дворянинова"
+surname = "Бирюкова"
 count = team.count(surname)
 
 if count > 0:

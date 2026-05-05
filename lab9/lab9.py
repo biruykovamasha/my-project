@@ -57,15 +57,14 @@ def task_9_3():
 
     # Обрабатываем 5 файлов
     for i in range(1, 6):
-        # Путь к исходному файлу
         input_path = os.path.join('images', f'{i}.jpg')
-        # Открываем изображение
+
         img = Image.open(input_path)
-        # Применяем фильтр
+
         filtered_img = img.filter(filter_type)
-        # Путь для сохранения
+
         output_path = os.path.join('filtered', f'filtered_{i}.jpg')
-        # Сохраняем
+
         filtered_img.save(output_path)
         print(f'Обработан: {input_path} -> {output_path}')
 
@@ -73,15 +72,11 @@ def task_9_3():
 
 
 def task_9_4():
-    """
-    Добавляет текстовый водяной знак на изображения.
-    Файлы для обработки: photo1.jpg, photo2.jpg (лежат в images/).
-    Результаты сохраняются в папку watermarked.
-    """
+
     os.makedirs('watermarked', exist_ok=True)
 
     watermark_text = "Watermark"
-    # Список файлов для обработки (можно добавить или изменить имена)
+
     files_to_process = ['photo1.jpg', 'photo2.jpg']
 
     for fname in files_to_process:
@@ -93,12 +88,12 @@ def task_9_4():
         txt_layer = Image.new('RGBA', img.size, (255, 255, 255, 0))
         draw = ImageDraw.Draw(txt_layer)
 
-        # Шрифт (стандартный, но можно указать путь к .ttf, например: ImageFont.truetype("arial.ttf", 36))
+        # Шрифт
         font = ImageFont.load_default()
-        # Цвет текста: белый с полупрозрачностью (альфа = 128 из 255)
+        # Цвет текста
         text_color = (255, 255, 255, 128)
 
-        # Определяем размеры текста (bounding box)
+        # Определяем размеры текста
         bbox = draw.textbbox((0, 0), watermark_text, font=font)
         text_width = bbox[2] - bbox[0]
         text_height = bbox[3] - bbox[1]

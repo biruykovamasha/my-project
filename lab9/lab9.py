@@ -122,7 +122,7 @@ def task_9_4():
     print('Задача 9.4 выполнена. Файлы сохранены в папке watermarked.')
 
 if __name__ == '__main__':
-    # task_9_1()
+    task_9_1()
     # task_9_2()
     # task_9_3()
     # task_9_4()

@@ -66,7 +66,7 @@ def task_10_3():
         return
 
     img_path = os.path.join('images', filename)
-    img = Image.open(img_path).convert('RGBA')
+    img = Image.open(img_path)
     draw = ImageDraw.Draw(img)
 
     bold_font_path = os.path.join('fonts', 'Roboto-Bold.ttf')
@@ -82,7 +82,7 @@ def task_10_3():
 
     greeting_text = ', поздравляю!'
     name_color = (255, 0, 0)
-    greeting_color = (0, 128, 0)
+    greeting_color = (255, 0, 0)
 
     name_bbox = draw.textbbox((0, 0), name, font=bold_font)
     name_width = name_bbox[2] - name_bbox[0]
@@ -104,5 +104,5 @@ def task_10_3():
 
 if __name__ == '__main__':
     # task_10_1()
-    task_10_2()
-    # task_10_3()
+    # task_10_2()
+    task_10_3()

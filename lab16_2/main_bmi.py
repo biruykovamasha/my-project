@@ -12,7 +12,7 @@ class BMICalculator(QtWidgets.QMainWindow):
     def init_UI(self):
         self.setWindowTitle('Калькулятор ИМТ')
 
-        # Защита: если кнопка не найдена, мы узнаем об этом сразу, без вылета
+        # если кнопка не найдена, мы узнаем об этом сразу, без вылета
         try:
             self.ui.btn_calc.clicked.connect(self.calculate_bmi)
         except AttributeError:

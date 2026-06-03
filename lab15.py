@@ -1,65 +1,65 @@
 # Лабораторная 15.Бирюкова Мария
 # Задание.15.1
 
-# import tkinter as tk
-# import requests
-#
-# API_KEY = "2d22a2d9ba43bec304baa1a56e186243"
-#
-# # 1.обработка запроса
-# def get_weather():
-#     city = city_entry.get().strip()
-#     if not city:
-#         result_label.config(text="Введите название города!")
-#         return
-#
-# # 2.формирование и отправка запроса
-#     url = "https://api.openweathermap.org/data/2.5/weather"
-#     params = {
-#         "q": city,
-#         "appid": API_KEY,
-#         "units": "metric",
-#         "lang": "ru"
-#     }
-#     try:
-#         response = requests.get(url, params=params)
-#         data = response.json()
-#
-# # 3.обработка ошибок
-#         if data.get("cod") != 200:
-#             result_label.config(text=f"Ошибка: {data.get('message', 'Неизвестная ошибка')}")
-#             return
-#
-#         temp = data["main"]["temp"]
-#         feels_like = data["main"]["feels_like"]
-#         description = data["weather"][0]["description"]
-#
-# # 4.обновление интерфейса и обработка исключений
-#         text = f"Температура: {temp}°C\nОщущается как: {feels_like}°C\n{description.capitalize()}"
-#         result_label.config(text=text)
-#
-#     except Exception as e:
-#         result_label.config(text=f"Не удалось получить данные.\nОшибка: {e}")
-#
-# # 5.создание графического интерфейса (GUI)
-# root = tk.Tk()
-# root.title("Погода")
-# root.geometry("400x300")
-#
-# # 6.виджеты и компоновка
-# label = tk.Label(root, text="Введите город:")
-# label.pack(pady=5)
-#
-# city_entry = tk.Entry(root, width=30)
-# city_entry.pack(pady=5)
-#
-# button = tk.Button(root, text="Узнать погоду", command=get_weather)
-# button.pack(pady=10)
-#
-# result_label = tk.Label(root, text="", font=("Arial", 12), justify="left")
-# result_label.pack(pady=10)
-#
-# root.mainloop()
+import tkinter as tk
+import requests
+
+API_KEY = "2d22a2d9ba43bec304baa1a56e186243"
+
+# 1.обработка запроса
+def get_weather():
+    city = city_entry.get().strip()
+    if not city:
+        result_label.config(text="Введите название города!")
+        return
+
+# 2.формирование и отправка запроса
+    url = "https://api.openweathermap.org/data/2.5/weather"
+    params = {
+        "q": city,
+        "appid": API_KEY,
+        "units": "metric",
+        "lang": "ru"
+    }
+    try:
+        response = requests.get(url, params=params)
+        data = response.json()
+
+# 3.обработка ошибок
+        if data.get("cod") != 200:
+            result_label.config(text=f"Ошибка: {data.get('message', 'Неизвестная ошибка')}")
+            return
+
+        temp = data["main"]["temp"]
+        feels_like = data["main"]["feels_like"]
+        description = data["weather"][0]["description"]
+
+# 4.обновление интерфейса и обработка исключений
+        text = f"Температура: {temp}°C\nОщущается как: {feels_like}°C\n{description.capitalize()}"
+        result_label.config(text=text)
+
+    except Exception as e:
+        result_label.config(text=f"Не удалось получить данные.\nОшибка: {e}")
+
+# 5.создание графического интерфейса (GUI)
+root = tk.Tk()
+root.title("Погода")
+root.geometry("400x300")
+
+# 6.виджеты и компоновка
+label = tk.Label(root, text="Введите город:")
+label.pack(pady=5)
+
+city_entry = tk.Entry(root, width=30)
+city_entry.pack(pady=5)
+
+button = tk.Button(root, text="Узнать погоду", command=get_weather)
+button.pack(pady=10)
+
+result_label = tk.Label(root, text="", font=("Arial", 12), justify="left")
+result_label.pack(pady=10)
+
+root.mainloop()
 
 
 # # Задание.15.2

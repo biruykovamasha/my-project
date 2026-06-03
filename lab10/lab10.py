@@ -12,7 +12,7 @@ def task_10_1():
     width, height = img.size
     print(f'Размер открытки: {width} x {height}')
 
-    # Пример: обрезаем по 40 пикселей со всех сторон
+    # обрезаем по 40 пикселей со всех сторон
     left = 40
     top = 40
     right = width - 40

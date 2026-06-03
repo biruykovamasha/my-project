@@ -20,7 +20,7 @@ newRestaurant = Restaurant("Вкусный уголок", "Итальянска�
 print(newRestaurant.restaurant_name)
 print(newRestaurant.cuisine_type)
 
-# вызываем методы
+# вызываем методыы
 newRestaurant.describe_restaurant()
 newRestaurant.open_restaurant()
 

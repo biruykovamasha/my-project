@@ -4,7 +4,7 @@ from PyQt5.QtGui import QIcon
 from currency_converter import CurrencyConverter
 from ui import Ui_MainWindow  # Импортируем наш сгенерированный интерфейс
 
-# 1. Создание класса и инициализация
+# 1. Создание класса и инициализацияя
 class CurrencyConv(QtWidgets.QMainWindow):
     def __init__(self):
         super(CurrencyConv, self).__init__()
